@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://be4ankb1d5loi"]
+
+[ext_resource type="Texture2D" uid="uid://bynft2tr5y7d" path="res://Art/Levels/Animated Objects/Plant/plant 1.png" id="1_6gno0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eelj"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 0, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4id7c"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 25, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5yiu"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 50, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r60ic"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 75, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dex7c"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 100, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk5ub"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 125, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6g0s"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 150, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7bcp"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 175, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0315y"]
+atlas = ExtResource("1_6gno0")
+region = Rect2(0, 200, 27, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfnp4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eelj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4id7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5yiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r60ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dex7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk5ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6g0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7bcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0315y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="GlowingPlant" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_tfnp4")
+animation = &"idle"

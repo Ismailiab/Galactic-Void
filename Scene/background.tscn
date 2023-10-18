@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6cdlu44lo7m2"]
+
+[ext_resource type="Texture2D" uid="uid://yuenewupxwwx" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg3.png" id="2_340ar"]
+[ext_resource type="Texture2D" uid="uid://dg8efdq1kmg5e" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg1.png" id="2_anf7l"]
+[ext_resource type="Texture2D" uid="uid://dwo2oxwy76fwd" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg.png" id="2_hhlls"]
+[ext_resource type="Texture2D" uid="uid://ba3m45ef0b5on" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg2.png" id="3_csfqh"]
+[ext_resource type="Texture2D" uid="uid://bwpxt8jn8s1qy" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg4.png" id="5_40v3y"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+follow_viewport_scale = 0.001
+scroll_limit_begin = Vector2(2.08165e-12, 2.08165e-12)
+scroll_limit_end = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(-54, -2)
+motion_scale = Vector2(0.01, 0.01)
+motion_mirroring = Vector2(576, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(289, 77)
+texture = ExtResource("2_hhlls")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 576, 384)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(289, 77)
+texture = ExtResource("2_anf7l")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 576, 384)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(289, 77)
+texture = ExtResource("3_csfqh")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 576, 384)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(289, 77)
+texture = ExtResource("2_340ar")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 576, 384)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(288, 120)
+texture = ExtResource("5_40v3y")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 576, 384)

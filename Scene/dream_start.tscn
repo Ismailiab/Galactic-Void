@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://1sp86xycqm25"]
+
+[ext_resource type="Script" path="res://Script/start.gd" id="1_1wqde"]
+[ext_resource type="Texture2D" path="res://Art/Levels/Tilesets/DreamStart.png" id="2_pkwea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q85e"]
+size = Vector2(20, 0)
+
+[node name="DreamStart" type="StaticBody2D"]
+script = ExtResource("1_1wqde")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_pkwea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5q85e")
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(0, -12)

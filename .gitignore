@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+.import/
+*.import
+
+#macOS-specific ignores
+.DS_store
+.AppleDouble
+.LSOverride
+
+#Export Directories
+export/
+builds/

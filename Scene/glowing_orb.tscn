@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0f0toiywral7"]
+
+[ext_resource type="Texture2D" uid="uid://pte3o5fasxrg" path="res://Art/Levels/Animated Objects/Glowing Orb/Orb GLowing thing.png" id="1_arftv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtkoh"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 0, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_illa6"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 46, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebpga"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 92, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljypf"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 138, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yilf5"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 184, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bub6j"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 230, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oikh7"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 276, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgqnu"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 322, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5388"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 368, 77, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywdin"]
+atlas = ExtResource("1_arftv")
+region = Rect2(0, 414, 77, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqoa8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtkoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_illa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebpga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljypf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yilf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bub6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oikh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgqnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5388")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywdin")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="GlowingOrb" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mqoa8")
+animation = &"idle"
+frame_progress = 0.314931
