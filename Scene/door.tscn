@@ -121,5 +121,5 @@ position = Vector2(0, -24)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lie8q")
 animation = &"open"
-frame = 5
-frame_progress = 0.0285325
+frame = 2
+frame_progress = 0.291862

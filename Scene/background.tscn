@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6cdlu44lo7m2"]
 
-[ext_resource type="Texture2D" uid="uid://yuenewupxwwx" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg3.png" id="2_340ar"]
-[ext_resource type="Texture2D" uid="uid://dg8efdq1kmg5e" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg1.png" id="2_anf7l"]
-[ext_resource type="Texture2D" uid="uid://dwo2oxwy76fwd" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg.png" id="2_hhlls"]
-[ext_resource type="Texture2D" uid="uid://ba3m45ef0b5on" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg2.png" id="3_csfqh"]
-[ext_resource type="Texture2D" uid="uid://bwpxt8jn8s1qy" path="res://Art/Levels/Tilesets/The DARK Series - Camp & Paralalax Forest/Forest Parallax/bg4.png" id="5_40v3y"]
+[ext_resource type="Texture2D" uid="uid://yuenewupxwwx" path="res://Art/Levels/Backgrounds/Forest Parallax/bg3.png" id="2_340ar"]
+[ext_resource type="Texture2D" uid="uid://dg8efdq1kmg5e" path="res://Art/Levels/Backgrounds/Forest Parallax/bg1.png" id="2_anf7l"]
+[ext_resource type="Texture2D" uid="uid://dwo2oxwy76fwd" path="res://Art/Levels/Backgrounds/Forest Parallax/bg.png" id="2_hhlls"]
+[ext_resource type="Texture2D" uid="uid://ba3m45ef0b5on" path="res://Art/Levels/Backgrounds/Forest Parallax/bg2.png" id="3_csfqh"]
+[ext_resource type="Texture2D" uid="uid://bwpxt8jn8s1qy" path="res://Art/Levels/Backgrounds/Forest Parallax/bg4.png" id="5_40v3y"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 follow_viewport_scale = 0.001

@@ -31,23 +31,33 @@ func set_direction(dir):
 
 #Jump animations
 func jump_start_animation():
-	animated_sprite.play("Jump_start")
-	animation_locked = true
+	if (animated_sprite.animation != "Attack1"):
+		#Call on autoload audio player for sound
+		AudioPlayer.play_sfx("jump", -15)
+		animated_sprite.play("Jump_start")
+		animation_locked = true
 
 func jump_end_animation():
-	animated_sprite.play("Jump_end")
-	animation_locked = true
+	if (animated_sprite.animation != "Attack1"):
+		animated_sprite.play("Jump_end")
+		animation_locked = true
 
 func double_jump_animation():
-	animated_sprite.play("Double_jump")
-	animation_locked = true
+	if (animated_sprite.animation != "Attack1"):
+		#Call on autoload audio player for sound
+		AudioPlayer.play_sfx("double_jump", -15)
+		animated_sprite.play("Double_jump")
+		animation_locked = true
 
 func land_animation():
-	animated_sprite.play("Double_jump_land")
-	animation_locked = true
+	if (animated_sprite.animation != "Attack1"):
+		animated_sprite.play("Double_jump_land")
+		animation_locked = true
 
+#attack animation
 func attack_1_animation():
 	animated_sprite.play("Attack1")
+	AudioPlayer.play_sfx("player_attack", -15)
 	animation_locked = true
 
 #Listen for node signal to stop lock on landing animation
@@ -57,5 +67,3 @@ func _on_animated_sprite_2d_animation_finished():
 		animation_locked = false
 	if get_parent().is_attacking == true:
 		get_parent().is_attacking = false
-	
-	print(get_parent().is_attacking)

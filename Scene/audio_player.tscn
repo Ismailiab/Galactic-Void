@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwigjf547eme0"]
+
+[ext_resource type="Script" path="res://Script/audio_player.gd" id="1_guxnh"]
+[ext_resource type="AudioStream" uid="uid://ievl72uxoxst" path="res://Sound/Music/3-Dark Fantasy Studio- Time traveller (loop).mp3" id="2_f77si"]
+
+[node name="AudioPlayer" type="Node"]
+script = ExtResource("1_guxnh")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_f77si")
+volume_db = -10.0
+autoplay = true

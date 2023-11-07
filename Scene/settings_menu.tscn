@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://iro1thlgsw11"]
+
+[ext_resource type="Script" path="res://Script/settings_menu.gd" id="1_141vj"]
+[ext_resource type="PackedScene" uid="uid://bctsrf8u3xpud" path="res://Scene/volume_slider.tscn" id="1_sedd2"]
+[ext_resource type="FontFile" uid="uid://dap108k12avt2" path="res://Art/Fonts/SpaceGrotesk-Regular.ttf" id="1_ykvci"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_whts8"]
+font = ExtResource("1_ykvci")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3if8"]
+font = ExtResource("1_ykvci")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_3lhar"]
+font = ExtResource("1_ykvci")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_51o3v"]
+font = ExtResource("1_ykvci")
+font_size = 12
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_141vj")
+
+[node name="SettingsMenuLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -113.0
+offset_right = 27.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_whts8")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = -73.0
+offset_right = 78.5
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_d3if8")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Master" parent="PanelContainer/VBoxContainer" instance=ExtResource("1_sedd2")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_3lhar")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Music" parent="PanelContainer/VBoxContainer" instance=ExtResource("1_sedd2")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFXLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_51o3v")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SFX" parent="PanelContainer/VBoxContainer" instance=ExtResource("1_sedd2")]
+layout_mode = 2
+bus_name = "sfx"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 208.0
+offset_right = 96.0
+offset_bottom = 232.0
+theme_override_fonts/font = ExtResource("1_ykvci")
+theme_override_font_sizes/font_size = 12
+text = "Back"

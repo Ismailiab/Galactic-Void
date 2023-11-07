@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://do6ggst70cjg1"]
+
+[ext_resource type="Script" path="res://Script/MainMenuBackground.gd" id="1_e3k3h"]
+[ext_resource type="Texture2D" uid="uid://d1hh2sn3q7myh" path="res://Art/Levels/Backgrounds/DARK Edition Parallax Background/DARK Edition Parallax Background/1-Background.png" id="2_q4p6b"]
+[ext_resource type="Texture2D" uid="uid://b73584s3jv5ct" path="res://Art/Levels/Backgrounds/DARK Edition Parallax Background/DARK Edition Parallax Background/2-super far.png" id="3_8pn6g"]
+[ext_resource type="Texture2D" uid="uid://gm1phnn2l0yv" path="res://Art/Levels/Backgrounds/DARK Edition Parallax Background/DARK Edition Parallax Background/3-far.png" id="4_wmwur"]
+[ext_resource type="Texture2D" uid="uid://bm3xk5s0end3c" path="res://Art/Levels/Backgrounds/DARK Edition Parallax Background/DARK Edition Parallax Background/4-far light.png" id="5_veteu"]
+[ext_resource type="Texture2D" uid="uid://cr66suxwsdocu" path="res://Art/Levels/Backgrounds/DARK Edition Parallax Background/DARK Edition Parallax Background/5-close.png" id="6_gvgrs"]
+[ext_resource type="Texture2D" uid="uid://c22r2hpdv7kb5" path="res://Art/Levels/Backgrounds/DARK Edition Parallax Background/DARK Edition Parallax Background/6-close light.png" id="7_dlj7m"]
+[ext_resource type="Texture2D" uid="uid://bgx23txget55s" path="res://Art/Levels/Backgrounds/DARK Edition Parallax Background/DARK Edition Parallax Background/7-tileset.png" id="8_htgou"]
+
+[node name="MainMenuBackground" type="ParallaxBackground"]
+scale = Vector2(2.7, 2.7)
+transform = Transform2D(2.7, 0, 0, 2.7, 0, 0)
+script = ExtResource("1_e3k3h")
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(314, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer1"]
+texture_repeat = 2
+texture = ExtResource("2_q4p6b")
+centered = false
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 314, 100)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(314, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("3_8pn6g")
+centered = false
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 480, 270)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(314, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("4_wmwur")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(314, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+texture = ExtResource("5_veteu")
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(314, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer5"]
+texture = ExtResource("6_gvgrs")
+centered = false
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(314, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer6"]
+texture = ExtResource("7_dlj7m")
+centered = false
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(314, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer7"]
+texture = ExtResource("8_htgou")
+centered = false

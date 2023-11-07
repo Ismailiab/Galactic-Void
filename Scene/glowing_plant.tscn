@@ -1,81 +1,85 @@
-[gd_scene load_steps=12 format=3 uid="uid://be4ankb1d5loi"]
+[gd_scene load_steps=13 format=3 uid="uid://be4ankb1d5loi"]
 
+[ext_resource type="Script" path="res://Script/animated_objects.gd" id="1_3mpk3"]
 [ext_resource type="Texture2D" uid="uid://bynft2tr5y7d" path="res://Art/Levels/Animated Objects/Plant/plant 1.png" id="1_6gno0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8eelj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmqxa"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 0, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4id7c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt5hf"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 25, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5yiu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge1oy"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 50, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r60ic"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qqgx"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 75, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dex7c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lahac"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 100, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fk5ub"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eve47"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 125, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6g0s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d745i"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 150, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7bcp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilfix"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 175, 27, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0315y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyi8u"]
 atlas = ExtResource("1_6gno0")
 region = Rect2(0, 200, 27, 25)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tfnp4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfuyu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8eelj")
+"texture": SubResource("AtlasTexture_dmqxa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4id7c")
+"texture": SubResource("AtlasTexture_kt5hf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c5yiu")
+"texture": SubResource("AtlasTexture_ge1oy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r60ic")
+"texture": SubResource("AtlasTexture_1qqgx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dex7c")
+"texture": SubResource("AtlasTexture_lahac")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fk5ub")
+"texture": SubResource("AtlasTexture_eve47")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s6g0s")
+"texture": SubResource("AtlasTexture_d745i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k7bcp")
+"texture": SubResource("AtlasTexture_ilfix")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0315y")
+"texture": SubResource("AtlasTexture_hyi8u")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 12.0
+"speed": 6.0
 }]
 
-[node name="GlowingPlant" type="StaticBody2D"]
+[node name="GlowingPlant" type="Node2D" groups=["animated_objects"]]
+script = ExtResource("1_3mpk3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
-sprite_frames = SubResource("SpriteFrames_tfnp4")
+sprite_frames = SubResource("SpriteFrames_gfuyu")
 animation = &"idle"
+frame = 4
+frame_progress = 0.528959
