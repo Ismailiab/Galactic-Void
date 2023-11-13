@@ -7,9 +7,9 @@ extends CharacterBody2D
 
 #Referencing the basic node "player_animation_handler
 @onready var animation_handler : Node = $player_animation_handler
+
 #Call node from scene heirarchy 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
-
 @onready var coyote_timer : Timer = $CoyoteTimer
 
 #Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -57,7 +57,7 @@ func _physics_process(delta):
 			#Double jump in air
 			double_jump()
 	
-	#Handle falling
+	#Call animation handler for falling animation
 	if velocity.y > 0 && !is_on_floor():
 		animation_handler.jump_end_animation()
 	
@@ -74,31 +74,32 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	#Start coyote timer
+	#Start coyote timer to allow a player to jump shortly
+	#after leaving the ground
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
 	
+	#Update direction and animation based on player input
 	animation_handler.set_direction(direction)
-	#Update animation based on player input
 	animation_handler.update_animation()
 
 
-#Jump and play animation for jump
+#Jump and play animation for jump from the animation handler
 func jump():
 	velocity.y = jump_velocity
 	animation_handler.jump_start_animation()
 
-#Function to play double jump animation
+#Function to double jump and play animation from the animation handler
 func double_jump():
 	velocity.y = double_jump_velocity
 	animation_handler.double_jump_animation()
 	has_double_jumped = true
 
-#Play landing animaiton
+#Play landing animaiton from the animation handler
 func land():
 	animation_handler.land_animation()
 
-#Play Attack1 animation
+#Play Attack1 animation from the animation handler
 func attack_1():
 	is_attacking = true
 	animation_handler.attack_1_animation()

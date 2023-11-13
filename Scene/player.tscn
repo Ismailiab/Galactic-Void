@@ -353,7 +353,6 @@ autoplay = "Idle"
 offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_t38kt")
 
 [node name="player_animation_handler" type="Node" parent="."]

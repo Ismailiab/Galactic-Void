@@ -1,6 +1,6 @@
 extends Node
 
-
+#Create a reference to a type of node
 var animated_sprite : AnimatedSprite2D
 var direction : Vector2 = Vector2.ZERO
 var animation_locked : bool = false
@@ -9,7 +9,7 @@ func initialize(sprite_ref : AnimatedSprite2D):
 	animated_sprite = sprite_ref
 
 
-#Update player animation
+#Update player animation when moving along the x axis
 func update_animation():
 	if not animation_locked:
 		if direction.x != 0:
@@ -31,6 +31,8 @@ func set_direction(dir):
 
 #Jump animations
 func jump_start_animation():
+	#Attack animation takes priority to ensure players can attack
+	#from all positions in the game
 	if (animated_sprite.animation != "Attack1"):
 		#Call on autoload audio player for sound
 		AudioPlayer.play_sfx("jump", -15)
@@ -62,8 +64,9 @@ func attack_1_animation():
 
 #Listen for node signal to stop lock on landing animation
 func _on_animated_sprite_2d_animation_finished():
-	#Using an array to check for multiple animations
+	#Using an array to check for multiple animations and reset animation_locked var
 	if (["Jump_start", "Jump_end", "Double_jump", "Double_jump_land", "Attack1"]).has(animated_sprite.animation):
 		animation_locked = false
+	#Check the is_attacking var on player.gd and reset when required
 	if get_parent().is_attacking == true:
 		get_parent().is_attacking = false

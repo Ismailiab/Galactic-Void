@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2n5dmu2qywmq"]
+[gd_scene load_steps=10 format=3 uid="uid://2n5dmu2qywmq"]
 
 [ext_resource type="PackedScene" uid="uid://d3j88jgxnaq85" path="res://Scene/tile_map_1_5.tscn" id="1_vd3bx"]
 [ext_resource type="PackedScene" uid="uid://1sp86xycqm25" path="res://Scene/dream_start.tscn" id="2_80jxm"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b0f0toiywral7" path="res://Scene/glowing_orb.tscn" id="6_ubdip"]
 [ext_resource type="PackedScene" uid="uid://be4ankb1d5loi" path="res://Scene/glowing_plant.tscn" id="7_701d4"]
 [ext_resource type="PackedScene" uid="uid://b0ieyrmydq1c" path="res://Scene/glowing_flower.tscn" id="8_brpji"]
+[ext_resource type="PackedScene" uid="uid://bxormce7ncwqi" path="res://Scene/enemy_drone_zapper.tscn" id="8_h2vqa"]
+[ext_resource type="PackedScene" uid="uid://b4w0i1tqlrfjv" path="res://Scene/enemy_bot_wheel.tscn" id="9_6c17a"]
 
 [node name="Level" type="Node2D"]
 
@@ -45,3 +47,9 @@ position = Vector2(1139, 257)
 
 [node name="GlowingPlant2" parent="." instance=ExtResource("8_brpji")]
 position = Vector2(1173, 252)
+
+[node name="Enemy_DroneZapper" parent="." instance=ExtResource("8_h2vqa")]
+position = Vector2(1381, 225)
+
+[node name="Enemy_BotWheel" parent="." instance=ExtResource("9_6c17a")]
+position = Vector2(310, 244)

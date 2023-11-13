@@ -8,7 +8,7 @@ func _ready():
 	#Get bus index by name from AudioServer
 	bus_index = AudioServer.get_bus_index(bus_name)
 	
-	#Set Volume
+	#Set Volume when opening
 	value_changed.connect(_on_sound_value_changed)
 	
 	#converting db to linear to initialize sliders with current volume
