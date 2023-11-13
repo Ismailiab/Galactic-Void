@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://4t4no0cijcis"]
+[gd_scene load_steps=8 format=3 uid="uid://4t4no0cijcis"]
 
 [ext_resource type="Script" path="res://Script/main_menu.gd" id="1_bl8bn"]
 [ext_resource type="PackedScene" uid="uid://do6ggst70cjg1" path="res://Scene/main_menu_background.tscn" id="1_nlbyq"]
 [ext_resource type="FontFile" uid="uid://buxu0pmq3usqx" path="res://Art/Fonts/Orbitron-SemiBold.ttf" id="2_f5xh7"]
 [ext_resource type="FontFile" uid="uid://dap108k12avt2" path="res://Art/Fonts/SpaceGrotesk-Regular.ttf" id="3_nvvo5"]
+[ext_resource type="PackedScene" uid="uid://iro1thlgsw11" path="res://Scene/settings_menu.tscn" id="5_3b6iw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_87tsx"]
 font = ExtResource("2_f5xh7")
@@ -180,3 +181,8 @@ theme_override_fonts/font = ExtResource("3_nvvo5")
 theme_override_font_sizes/font_size = 12
 text = "Back
 "
+
+[node name="SettingsMenu" parent="." instance=ExtResource("5_3b6iw")]
+layout_mode = 1
+
+[editable path="SettingsMenu"]
