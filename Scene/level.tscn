@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://d3j88jgxnaq85" path="res://Scene/tile_map_1_5.tscn" id="1_vd3bx"]
 [ext_resource type="PackedScene" uid="uid://1sp86xycqm25" path="res://Scene/dream_start.tscn" id="2_80jxm"]
-[ext_resource type="PackedScene" uid="uid://cu7o2vgusw12e" path="res://Scene/player.tscn" id="3_wxofx"]
 [ext_resource type="PackedScene" uid="uid://c6cdlu44lo7m2" path="res://Scene/background.tscn" id="4_kfv3r"]
 [ext_resource type="PackedScene" uid="uid://b0f0toiywral7" path="res://Scene/glowing_orb.tscn" id="6_ubdip"]
 [ext_resource type="PackedScene" uid="uid://be4ankb1d5loi" path="res://Scene/glowing_plant.tscn" id="7_701d4"]
 [ext_resource type="PackedScene" uid="uid://b0ieyrmydq1c" path="res://Scene/glowing_flower.tscn" id="8_brpji"]
 [ext_resource type="PackedScene" uid="uid://bxormce7ncwqi" path="res://Scene/enemy_drone_zapper.tscn" id="8_h2vqa"]
 [ext_resource type="PackedScene" uid="uid://b4w0i1tqlrfjv" path="res://Scene/enemy_bot_wheel.tscn" id="9_6c17a"]
+[ext_resource type="PackedScene" uid="uid://cu7o2vgusw12e" path="res://Scene/player.tscn" id="9_b7aei"]
 
 [node name="Level" type="Node2D"]
 
@@ -39,9 +39,6 @@ layer_2/tile_data = PackedInt32Array(917522, 0, 7, 983058, 0, 8, 917523, 65536, 
 [node name="Start_1_5" parent="." instance=ExtResource("2_80jxm")]
 position = Vector2(35, 256)
 
-[node name="Player" parent="." instance=ExtResource("3_wxofx")]
-position = Vector2(35, 243)
-
 [node name="GlowingPlant" parent="." instance=ExtResource("7_701d4")]
 position = Vector2(1139, 257)
 
@@ -53,3 +50,14 @@ position = Vector2(1381, 225)
 
 [node name="Enemy_BotWheel" parent="." instance=ExtResource("9_6c17a")]
 position = Vector2(310, 244)
+
+[node name="Enemy_DroneZapper2" parent="." instance=ExtResource("8_h2vqa")]
+position = Vector2(1092, 226)
+
+[node name="Enemy_BotWheel2" parent="." instance=ExtResource("9_6c17a")]
+position = Vector2(255, 244)
+
+[node name="Enemy_BotWheel3" parent="." instance=ExtResource("9_6c17a")]
+position = Vector2(693, 176)
+
+[node name="Player" parent="." instance=ExtResource("9_b7aei")]

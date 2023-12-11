@@ -1,0 +1,173 @@
+[gd_scene load_steps=6 format=3 uid="uid://chlmci3x5rolx"]
+
+[ext_resource type="FontFile" uid="uid://buxu0pmq3usqx" path="res://Art/Fonts/Orbitron-SemiBold.ttf" id="1_32g5l"]
+[ext_resource type="FontFile" uid="uid://dap108k12avt2" path="res://Art/Fonts/SpaceGrotesk-Regular.ttf" id="2_dyl7r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gwea"]
+font = ExtResource("1_32g5l")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fqh30"]
+font = ExtResource("2_dyl7r")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_mni2s"]
+font = ExtResource("2_dyl7r")
+
+[node name="GameControls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.5
+offset_top = 22.0
+offset_right = 66.5
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "Game Controls"
+label_settings = SubResource("LabelSettings_3gwea")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -89.0
+offset_right = 208.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.5
+offset_top = -6.0
+offset_right = 134.5
+offset_bottom = 34.0
+grow_horizontal = 2
+
+[node name="ActionGroupLabel" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Action"
+label_settings = SubResource("LabelSettings_fqh30")
+
+[node name="KeyGroupLabel" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Key"
+label_settings = SubResource("LabelSettings_fqh30")
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -29.5
+offset_right = 230.5
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MoveLeftLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Left:"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="MoveLeftKeyLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A key / Left Arrow"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MoveRightLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Right:"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="MoveRightKeyLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "D key / Right Arrow"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="JumpLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Jump / Double Jump:"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="JumpKeyLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spacebar"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="AttackLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack:"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="AttackKeyLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "F key / Left click"
+label_settings = SubResource("LabelSettings_mni2s")
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = 74.0
+offset_right = -120.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dyl7r")
+theme_override_font_sizes/font_size = 12
+text = "Back
+"

@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0ieyrmydq1c"]
+[gd_scene load_steps=13 format=3 uid="uid://b0ieyrmydq1c"]
 
-[ext_resource type="Script" path="res://Script/animated_objects.gd" id="1_5kwan"]
 [ext_resource type="Texture2D" uid="uid://d0w4byphxpvj5" path="res://Art/Levels/Animated Objects/Flower/flower glow 16x16.png" id="1_exi2y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_686ag"]
@@ -78,13 +77,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 6.0
+"speed": 8.0
 }]
 
-[node name="GlowingPlant" type="Node2D" groups=["animated_objects"]]
-script = ExtResource("1_5kwan")
+[node name="GlowingPlant" type="Node2D" groups=["AnimatedObjects"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_8ul4x")
 animation = &"idle"
+frame_progress = 0.0479598

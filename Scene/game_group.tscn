@@ -1,0 +1,135 @@
+[gd_scene load_steps=14 format=3 uid="uid://60m8psh2u37j"]
+
+[ext_resource type="Script" path="res://Script/save_game.gd" id="1_432qh"]
+[ext_resource type="Script" path="res://Script/game_manager.gd" id="1_pxypk"]
+[ext_resource type="Script" path="res://Script/game_world.gd" id="2_qqbfk"]
+[ext_resource type="PackedScene" uid="uid://w82bm64ckjqa" path="res://Scene/level_1.tscn" id="3_5jtve"]
+[ext_resource type="PackedScene" uid="uid://b4w0i1tqlrfjv" path="res://Scene/enemy_bot_wheel.tscn" id="4_has6i"]
+[ext_resource type="PackedScene" uid="uid://cu7o2vgusw12e" path="res://Scene/player.tscn" id="5_ufn83"]
+[ext_resource type="PackedScene" uid="uid://1keulbjjf23t" path="res://Scene/parallax_fog_layer_background.tscn" id="6_4umid"]
+[ext_resource type="PackedScene" uid="uid://bxormce7ncwqi" path="res://Scene/enemy_drone_zapper.tscn" id="6_m5e5r"]
+[ext_resource type="PackedScene" uid="uid://n6tv4dantjwu" path="res://Scene/pause_menu.tscn" id="7_2dx5o"]
+[ext_resource type="FontFile" uid="uid://buxu0pmq3usqx" path="res://Art/Fonts/Orbitron-SemiBold.ttf" id="8_02ffy"]
+[ext_resource type="FontFile" uid="uid://dap108k12avt2" path="res://Art/Fonts/SpaceGrotesk-Regular.ttf" id="9_8ok87"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fc8td"]
+font = ExtResource("8_02ffy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7g71"]
+size = Vector2(3172, 30)
+
+[node name="GameGroup" type="Node"]
+script = ExtResource("1_pxypk")
+
+[node name="SaveGame" type="Node" parent="."]
+script = ExtResource("1_432qh")
+
+[node name="GameWorld" type="Node" parent="."]
+script = ExtResource("2_qqbfk")
+save_game_path = NodePath("../SaveGame")
+
+[node name="Level1" parent="GameWorld" instance=ExtResource("3_5jtve")]
+
+[node name="Enemies" type="Node2D" parent="GameWorld"]
+
+[node name="Enemy_BotWheel" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
+position = Vector2(1166, 192)
+
+[node name="Enemy_BotWheel2" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
+position = Vector2(986, 192)
+
+[node name="Enemy_BotWheel3" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
+position = Vector2(1930, 208)
+
+[node name="Enemy_BotWheel4" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
+position = Vector2(2772, 175)
+
+[node name="Enemy_DroneZapper" parent="GameWorld/Enemies" instance=ExtResource("6_m5e5r")]
+position = Vector2(2250, 217)
+
+[node name="Player" parent="GameWorld" instance=ExtResource("5_ufn83")]
+position = Vector2(51, 208)
+
+[node name="ParallaxFogLayerBackground" parent="GameWorld" instance=ExtResource("6_4umid")]
+
+[node name="GamePause" type="CanvasLayer" parent="GameWorld"]
+
+[node name="PauseMenu" parent="GameWorld/GamePause" instance=ExtResource("7_2dx5o")]
+
+[node name="SettingsMenu" parent="GameWorld/GamePause/PauseMenu/Panel" index="1"]
+visible = true
+
+[node name="GameControls" parent="GameWorld/GamePause/PauseMenu/Panel" index="2"]
+visible = true
+
+[node name="PopUpQuitConfirmation" parent="GameWorld/GamePause/PauseMenu/Panel" index="3"]
+visible = true
+
+[node name="GameSavedPopup" type="Control" parent="GameWorld/GamePause"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="GameWorld/GamePause/GameSavedPopup"]
+layout_mode = 0
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 110.0
+offset_bottom = 20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameWorld/GamePause/GameSavedPopup/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -37.0
+offset_right = 60.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameSavedNotification" type="Label" parent="GameWorld/GamePause/GameSavedPopup/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game saved!"
+label_settings = SubResource("LabelSettings_fc8td")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameWorld/GamePause/GameSavedPopup/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="OkayButton" type="Button" parent="GameWorld/GamePause/GameSavedPopup/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_8ok87")
+text = "Okay!"
+
+[node name="DeathZone" type="Area2D" parent="GameWorld"]
+position = Vector2(-62, 346)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/DeathZone"]
+position = Vector2(1576, -5)
+shape = SubResource("RectangleShape2D_x7g71")
+
+[connection signal="pressed" from="GameWorld/GamePause/PauseMenu/Panel/MainPauseMenu/VBoxContainer/SaveGameButton" to="GameWorld" method="_on_save_game_button_pressed"]
+[connection signal="pressed" from="GameWorld/GamePause/GameSavedPopup/Panel/VBoxContainer/HBoxContainer/OkayButton" to="SaveGame" method="_on_okay_button_pressed"]
+[connection signal="body_entered" from="GameWorld/DeathZone" to="GameWorld" method="_on_death_zone_body_entered"]
+
+[editable path="GameWorld/GamePause/PauseMenu"]
+[editable path="GameWorld/GamePause/PauseMenu/Panel/GameControls"]

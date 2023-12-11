@@ -81,7 +81,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="GlowingOrb" type="Node2D" groups=["animated_objects"]]
+[node name="GlowingOrb" type="Node2D" groups=["AnimatedObjects"]]
 script = ExtResource("1_ynd6v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

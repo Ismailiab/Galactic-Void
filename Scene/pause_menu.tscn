@@ -1,0 +1,219 @@
+[gd_scene load_steps=8 format=3 uid="uid://n6tv4dantjwu"]
+
+[ext_resource type="FontFile" uid="uid://buxu0pmq3usqx" path="res://Art/Fonts/Orbitron-SemiBold.ttf" id="1_ishae"]
+[ext_resource type="Script" path="res://Script/pause_menu.gd" id="1_l7sv7"]
+[ext_resource type="FontFile" uid="uid://dap108k12avt2" path="res://Art/Fonts/SpaceGrotesk-Regular.ttf" id="2_0okt2"]
+[ext_resource type="PackedScene" uid="uid://iro1thlgsw11" path="res://Scene/settings_menu.tscn" id="3_ob0nm"]
+[ext_resource type="PackedScene" uid="uid://chlmci3x5rolx" path="res://Scene/game_controls.tscn" id="4_r2bj5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tspmp"]
+font = ExtResource("1_ishae")
+font_size = 32
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0u7g"]
+line_spacing = 2.0
+font = ExtResource("2_0okt2")
+font_size = 12
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_l7sv7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.5
+offset_top = -121.5
+offset_right = 222.5
+offset_bottom = 121.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPauseMenu" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseMenuTitle" type="Label" parent="Panel/MainPauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 44.5
+offset_right = 395.5
+offset_bottom = 64.0
+grow_horizontal = 2
+text = "Game Paused"
+label_settings = SubResource("LabelSettings_tspmp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MainPauseMenu"]
+layout_mode = 0
+offset_left = 164.5
+offset_top = 69.5
+offset_right = 285.5
+offset_bottom = 217.5
+
+[node name="SettingsButton" type="Button" parent="Panel/MainPauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0okt2")
+theme_override_font_sizes/font_size = 16
+text = "Settings"
+
+[node name="SaveGameButton" type="Button" parent="Panel/MainPauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0okt2")
+theme_override_font_sizes/font_size = 16
+text = "Save Game"
+
+[node name="GameControlsButton" type="Button" parent="Panel/MainPauseMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0okt2")
+theme_override_font_sizes/font_size = 16
+text = "Game Controls
+"
+
+[node name="QuitButton" type="Button" parent="Panel/MainPauseMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 164.5
+offset_top = 138.5
+offset_right = 249.5
+offset_bottom = 163.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_0okt2")
+theme_override_font_sizes/font_size = 12
+text = "Quit
+"
+
+[node name="ResumeButton" type="Button" parent="Panel/MainPauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = 188.0
+offset_right = 100.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0okt2")
+theme_override_font_sizes/font_size = 12
+text = "Resume
+"
+
+[node name="SettingsMenu" parent="Panel" instance=ExtResource("3_ob0nm")]
+visible = false
+layout_mode = 1
+
+[node name="GameControls" parent="Panel" instance=ExtResource("4_r2bj5")]
+visible = false
+layout_mode = 1
+
+[node name="MenuTitle" parent="Panel/GameControls" index="0"]
+offset_top = 10.0
+offset_bottom = 34.0
+
+[node name="Panel" parent="Panel/GameControls" index="1"]
+offset_left = -207.5
+offset_top = -81.5
+offset_right = 207.5
+offset_bottom = 68.5
+
+[node name="PopUpQuitConfirmation" type="Control" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -20.0
+offset_right = 19.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/PopUpQuitConfirmation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -90.0
+offset_right = 90.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/PopUpQuitConfirmation/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -74.0
+offset_right = 60.5
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PopUpTitle" type="Label" parent="Panel/PopUpQuitConfirmation/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Are you sure you want to quit? 
+*All unsaved progress will be lost!"
+label_settings = SubResource("LabelSettings_d0u7g")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/PopUpQuitConfirmation/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="CancelButton" type="Button" parent="Panel/PopUpQuitConfirmation/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_0okt2")
+theme_override_font_sizes/font_size = 12
+text = "Cancel
+"
+
+[node name="YesButton" type="Button" parent="Panel/PopUpQuitConfirmation/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_0okt2")
+theme_override_font_sizes/font_size = 12
+text = "Yes
+"
+
+[editable path="Panel/GameControls"]

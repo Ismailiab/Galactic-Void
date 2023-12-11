@@ -1,0 +1,145 @@
+[gd_scene load_steps=21 format=3 uid="uid://c71h03xx0234p"]
+
+[ext_resource type="Texture2D" uid="uid://sqpn4ttf21lp" path="res://Art/Levels/Animated Objects/OrbMaker/Bubble Maker Orb thing (8x20).png" id="1_4c1hg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lilfh"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 0, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh715"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 20, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc161"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 40, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uppi"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 60, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j0vt"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 80, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bnix"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 100, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t0ch"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 120, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmf5r"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 140, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poddj"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 160, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi5si"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 180, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbt1j"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 200, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tixyb"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 220, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3mtx"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 240, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cc8j"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 260, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trclq"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 280, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uis7y"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 300, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30u6o"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 320, 8, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffbhy"]
+atlas = ExtResource("1_4c1hg")
+region = Rect2(0, 340, 8, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hivwq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lilfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh715")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc161")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uppi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j0vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bnix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t0ch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmf5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poddj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi5si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbt1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tixyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3mtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cc8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trclq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uis7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30u6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffbhy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="OrbMaker" type="Node2D" groups=["AnimatedObjects"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_hivwq")
+animation = &"idle"
+frame_progress = 0.0934194

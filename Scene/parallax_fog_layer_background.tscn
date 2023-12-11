@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1keulbjjf23t"]
+
+[ext_resource type="Script" path="res://Script/parallax_fog_layer.gd" id="1_saijy"]
+[ext_resource type="Texture2D" uid="uid://c8beforjmwk56" path="res://Art/Levels/Backgrounds/DARK - Peaks Of Lightning/DARK - Peaks Of Lightning/5- Fog (5).png" id="2_aym3s"]
+
+[node name="ParallaxFogLayerBackground" type="ParallaxBackground"]
+script = ExtResource("1_saijy")
+
+[node name="ParallaxFogLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(576, 2.08165e-12)
+
+[node name="Fog" type="Sprite2D" parent="ParallaxFogLayer"]
+texture = ExtResource("2_aym3s")
+
+[node name="Fog2" type="Sprite2D" parent="ParallaxFogLayer"]
+position = Vector2(1152, 0)
+texture = ExtResource("2_aym3s")

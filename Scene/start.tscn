@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dio6fuw3pr3x8"]
+[gd_scene load_steps=37 format=3 uid="uid://dio6fuw3pr3x8"]
 
 [ext_resource type="Script" path="res://Script/start.gd" id="1_aco8t"]
 [ext_resource type="Texture2D" uid="uid://b8wv4i7ajxlvq" path="res://Art/Levels/Tilesets/DARK- Portal and Shops/Portals/Sprite Sheets/Ancient Tech Portal.png" id="2_57ev2"]
@@ -99,6 +99,38 @@ region = Rect2(4158, 0, 189, 90)
 atlas = ExtResource("2_57ev2")
 region = Rect2(4347, 0, 189, 90)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vd32"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(0, 180, 189, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i1wf"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(189, 180, 189, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgw61"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(378, 180, 189, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jplbv"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(567, 180, 189, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys3g7"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(756, 180, 189, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxs4p"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(945, 180, 189, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdbvm"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(1134, 180, 189, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy4pb"]
+atlas = ExtResource("2_57ev2")
+region = Rect2(0, 0, 189, 90)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_63q2b"]
 animations = [{
 "frames": [{
@@ -174,8 +206,37 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_egofd")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vd32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i1wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgw61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jplbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys3g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxs4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdbvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy4pb")
+}],
+"loop": false,
+"name": &"load_in",
 "speed": 12.0
 }]
 
@@ -183,17 +244,17 @@ animations = [{
 size = Vector2(73, 1)
 
 [node name="Start" type="StaticBody2D"]
-position = Vector2(0, -45)
+position = Vector2(2.08165e-12, -31.6)
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_aco8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_63q2b")
-animation = &"idle"
-frame_progress = 0.792845
+animation = &"load_in"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 37.5)
 shape = SubResource("RectangleShape2D_3w181")
 
 [node name="SpawnPosition" type="Marker2D" parent="."]
-position = Vector2(0, 11)
+position = Vector2(-2.97378e-12, -20.5714)

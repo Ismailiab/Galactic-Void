@@ -8,3 +8,4 @@ extends ParallaxBackground
 
 func _ready():
 	sprite.texture = bg_texture
+

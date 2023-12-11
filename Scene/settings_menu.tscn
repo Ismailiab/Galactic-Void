@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://iro1thlgsw11"]
 
-[ext_resource type="Script" path="res://Script/settings_menu.gd" id="1_141vj"]
 [ext_resource type="PackedScene" uid="uid://bctsrf8u3xpud" path="res://Scene/volume_slider.tscn" id="1_sedd2"]
 [ext_resource type="FontFile" uid="uid://dap108k12avt2" path="res://Art/Fonts/SpaceGrotesk-Regular.ttf" id="1_ykvci"]
+[ext_resource type="FontFile" uid="uid://buxu0pmq3usqx" path="res://Art/Fonts/Orbitron-SemiBold.ttf" id="2_u8uop"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_whts8"]
-font = ExtResource("1_ykvci")
+font = ExtResource("2_u8uop")
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3if8"]
 font = ExtResource("1_ykvci")
@@ -26,21 +26,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_141vj")
 
 [node name="SettingsMenuLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -113.0
-offset_right = 27.0
-offset_bottom = -87.0
+offset_left = -37.5
+offset_top = 22.0
+offset_right = 37.5
+offset_bottom = 48.0
 grow_horizontal = 2
-grow_vertical = 2
 text = "Settings"
 label_settings = SubResource("LabelSettings_whts8")
 

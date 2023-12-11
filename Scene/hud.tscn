@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://d35sk24doj2y1"]
+
+[ext_resource type="Script" path="res://Script/hud.gd" id="1_ywqbm"]
+[ext_resource type="Texture2D" uid="uid://dedwfdokvh86x" path="res://Art/Characters/Health_UI/bar_progress.png" id="2_dqd7n"]
+[ext_resource type="Texture2D" uid="uid://dpq7d7505vuws" path="res://Art/Characters/Health_UI/bar_over.png" id="3_p07ls"]
+[ext_resource type="Texture2D" uid="uid://d1vlsaovjoddt" path="res://Art/Characters/Health_UI/Player_life.png" id="4_dxpwd"]
+[ext_resource type="FontFile" uid="uid://buxu0pmq3usqx" path="res://Art/Fonts/Orbitron-SemiBold.ttf" id="5_1ew63"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kns2f"]
+font = ExtResource("5_1ew63")
+font_size = 6
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ywqbm")
+
+[node name="PlayerHealth" type="TextureProgressBar" parent="." groups=["Persist"]]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 142.0
+offset_bottom = 11.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("2_dqd7n")
+texture_over = ExtResource("3_p07ls")
+texture_progress = ExtResource("2_dqd7n")
+tint_under = Color(0.415686, 0, 0, 0.658824)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0, 0.74902, 0.0117647, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 38.0
+offset_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PlayerLife" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("4_dxpwd")
+
+[node name="LivesLeft" type="Label" parent="HBoxContainer" groups=["Persist"]]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "x 5"
+label_settings = SubResource("LabelSettings_kns2f")
+vertical_alignment = 2

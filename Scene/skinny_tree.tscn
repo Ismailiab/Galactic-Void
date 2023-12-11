@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://biurnevjywbj1"]
+
+[ext_resource type="Texture2D" uid="uid://cnbg1kswv1vme" path="res://Art/Levels/Tilesets/The DARK Series - Trees & Roots/Animated Trees/Blood Tree 1 Sprite Sheet 112x128.png" id="1_2i607"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw4bl"]
+atlas = ExtResource("1_2i607")
+region = Rect2(0, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpyqk"]
+atlas = ExtResource("1_2i607")
+region = Rect2(112, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpvdb"]
+atlas = ExtResource("1_2i607")
+region = Rect2(224, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfymc"]
+atlas = ExtResource("1_2i607")
+region = Rect2(336, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84tas"]
+atlas = ExtResource("1_2i607")
+region = Rect2(448, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47kss"]
+atlas = ExtResource("1_2i607")
+region = Rect2(560, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx1sc"]
+atlas = ExtResource("1_2i607")
+region = Rect2(672, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lly84"]
+atlas = ExtResource("1_2i607")
+region = Rect2(784, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xynaa"]
+atlas = ExtResource("1_2i607")
+region = Rect2(896, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2qy0"]
+atlas = ExtResource("1_2i607")
+region = Rect2(1008, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4drjc"]
+atlas = ExtResource("1_2i607")
+region = Rect2(1120, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sl3i"]
+atlas = ExtResource("1_2i607")
+region = Rect2(1232, 128, 112, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v15xd"]
+atlas = ExtResource("1_2i607")
+region = Rect2(1344, 128, 112, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igof7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw4bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpyqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpvdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfymc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84tas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47kss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx1sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lly84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xynaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2qy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4drjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sl3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v15xd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="SkinnyTree" type="Node2D" groups=["AnimatedObjects"]]
+position = Vector2(0, -64)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_igof7")
+animation = &"idle"
+frame = 12
+frame_progress = 0.273564

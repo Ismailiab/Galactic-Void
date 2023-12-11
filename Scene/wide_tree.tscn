@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=3 uid="uid://1djmdnibmbtm"]
+
+[ext_resource type="Texture2D" uid="uid://bbcvchv16ha5v" path="res://Art/Levels/Tilesets/The DARK Series - Trees & Roots/Animated Trees/Blood Tree 2 Sprite Sheet 128x96.png" id="1_vsu54"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clhp3"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(0, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q40yw"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(128, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wfvd"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(256, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcqtq"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(384, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht6lr"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(512, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vba3"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(640, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtpdi"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(768, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ixlv"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(896, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhkp1"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(1024, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrhco"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(1152, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpc81"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(1280, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdhxa"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(1408, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ach8"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(1536, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khsy2"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(1664, 96, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7jyr"]
+atlas = ExtResource("1_vsu54")
+region = Rect2(1792, 96, 128, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xuor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clhp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q40yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wfvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcqtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht6lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vba3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtpdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ixlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhkp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrhco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpc81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdhxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ach8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khsy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7jyr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="WideTree" type="Node2D" groups=["AnimatedObjects"]]
+position = Vector2(0, -48)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8xuor")
+animation = &"idle"
+frame = 14
+frame_progress = 1.0
