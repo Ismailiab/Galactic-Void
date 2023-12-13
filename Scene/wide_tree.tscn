@@ -115,10 +115,10 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="WideTree" type="Node2D" groups=["AnimatedObjects"]]
+[node name="WideTree" type="Node2D"]
 position = Vector2(0, -48)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["AnimatedObjects"]]
 sprite_frames = SubResource("SpriteFrames_8xuor")
 animation = &"idle"
 frame = 14

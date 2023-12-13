@@ -1,13 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://60m8psh2u37j"]
+[gd_scene load_steps=12 format=3 uid="uid://60m8psh2u37j"]
 
 [ext_resource type="Script" path="res://Script/save_game.gd" id="1_432qh"]
 [ext_resource type="Script" path="res://Script/game_manager.gd" id="1_pxypk"]
 [ext_resource type="Script" path="res://Script/game_world.gd" id="2_qqbfk"]
 [ext_resource type="PackedScene" uid="uid://w82bm64ckjqa" path="res://Scene/level_1.tscn" id="3_5jtve"]
-[ext_resource type="PackedScene" uid="uid://b4w0i1tqlrfjv" path="res://Scene/enemy_bot_wheel.tscn" id="4_has6i"]
 [ext_resource type="PackedScene" uid="uid://cu7o2vgusw12e" path="res://Scene/player.tscn" id="5_ufn83"]
 [ext_resource type="PackedScene" uid="uid://1keulbjjf23t" path="res://Scene/parallax_fog_layer_background.tscn" id="6_4umid"]
-[ext_resource type="PackedScene" uid="uid://bxormce7ncwqi" path="res://Scene/enemy_drone_zapper.tscn" id="6_m5e5r"]
 [ext_resource type="PackedScene" uid="uid://n6tv4dantjwu" path="res://Scene/pause_menu.tscn" id="7_2dx5o"]
 [ext_resource type="FontFile" uid="uid://buxu0pmq3usqx" path="res://Art/Fonts/Orbitron-SemiBold.ttf" id="8_02ffy"]
 [ext_resource type="FontFile" uid="uid://dap108k12avt2" path="res://Art/Fonts/SpaceGrotesk-Regular.ttf" id="9_8ok87"]
@@ -16,7 +14,7 @@
 font = ExtResource("8_02ffy")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7g71"]
-size = Vector2(3172, 30)
+size = Vector2(5485, 30)
 
 [node name="GameGroup" type="Node"]
 script = ExtResource("1_pxypk")
@@ -30,25 +28,8 @@ save_game_path = NodePath("../SaveGame")
 
 [node name="Level1" parent="GameWorld" instance=ExtResource("3_5jtve")]
 
-[node name="Enemies" type="Node2D" parent="GameWorld"]
-
-[node name="Enemy_BotWheel" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
-position = Vector2(1166, 192)
-
-[node name="Enemy_BotWheel2" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
-position = Vector2(986, 192)
-
-[node name="Enemy_BotWheel3" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
-position = Vector2(1930, 208)
-
-[node name="Enemy_BotWheel4" parent="GameWorld/Enemies" instance=ExtResource("4_has6i")]
-position = Vector2(2772, 175)
-
-[node name="Enemy_DroneZapper" parent="GameWorld/Enemies" instance=ExtResource("6_m5e5r")]
-position = Vector2(2250, 217)
-
 [node name="Player" parent="GameWorld" instance=ExtResource("5_ufn83")]
-position = Vector2(51, 208)
+position = Vector2(47, 211)
 
 [node name="ParallaxFogLayerBackground" parent="GameWorld" instance=ExtResource("6_4umid")]
 
@@ -124,7 +105,7 @@ position = Vector2(-62, 346)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameWorld/DeathZone"]
-position = Vector2(1576, -5)
+position = Vector2(2732.5, -5)
 shape = SubResource("RectangleShape2D_x7g71")
 
 [connection signal="pressed" from="GameWorld/GamePause/PauseMenu/Panel/MainPauseMenu/VBoxContainer/SaveGameButton" to="GameWorld" method="_on_save_game_button_pressed"]

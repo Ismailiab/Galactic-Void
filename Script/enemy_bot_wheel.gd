@@ -9,7 +9,6 @@ var bullet_scene = preload("res://Scene/enemy_bot_wheel_bullet.tscn")
 
 func _ready():
 	attack_range = 70
-	health = 60
 
 func attack_player():
 	if can_attack == true:

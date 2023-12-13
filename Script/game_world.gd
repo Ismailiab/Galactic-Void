@@ -6,7 +6,6 @@ extends Node
 @onready var start_scene = $Level1/Start
 @onready var pause_menu = $GamePause/PauseMenu
 @onready var saved_popup = $GamePause/GameSavedPopup
-@onready var enemies = $Enemies
 
 var save_game = null
 

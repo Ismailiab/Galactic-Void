@@ -2,6 +2,7 @@ extends Node
 
 signal toggle_game_paused(is_paused : bool)
 
+
 #Save/Load Variables
 const SAVE_DIR = "user://saves/"
 const SAVE_FILE_NAME = "save.json"
@@ -39,7 +40,7 @@ func toggle_pause():
 
 func _on_main_menu_new_game_okay_button_pressed(user_input: String):
 	user_name = user_input
-	get_tree().change_scene_to_file("res://Scene/global_game_manager.tscn")
+	get_tree().change_scene_to_file("res://Scene/game_group.tscn")
 
 
 

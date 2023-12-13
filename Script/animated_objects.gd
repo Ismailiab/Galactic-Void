@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_objects = get_tree().get_nodes_in_group("AnimatedObjects")
 
-#Animate sprite for background object
 func _ready():
-	animated_sprite.play("idle")
+	for animated_object in animated_objects:
+		animated_object.play("idle")

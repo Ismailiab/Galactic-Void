@@ -101,10 +101,10 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="SkinnyTree" type="Node2D" groups=["AnimatedObjects"]]
+[node name="SkinnyTree" type="Node2D"]
 position = Vector2(0, -64)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["AnimatedObjects"]]
 sprite_frames = SubResource("SpriteFrames_igof7")
 animation = &"idle"
 frame = 12

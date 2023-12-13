@@ -51,12 +51,15 @@ func save_data(path: String):
 func display_game_saved():
 	if game_saved == true:
 		game_saved = false
-		var game_world = get_node(GlobalScript.game_manager).game_world
+		var game_world = get_node(GlobalScript.game_world)
 		game_world._on_pop_up_game_saved()
 
 
 
 #Button from game saved popup
 func _on_okay_button_pressed():
-	var game_world = get_node(GlobalScript.game_manager).game_world
+	var game_world = get_node(GlobalScript.game_world)
 	game_world.pop_up_game_saved_okay()
+
+
+

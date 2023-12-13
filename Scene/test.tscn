@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://t033hdop8ded"]
+
+[ext_resource type="PackedScene" uid="uid://p4g34ttfm35m" path="res://Scene/main_game_background_without_fog.tscn" id="1_pjtxo"]
+[ext_resource type="PackedScene" uid="uid://4lendbadafwu" path="res://Scene/tile_map.tscn" id="2_fo682"]
+[ext_resource type="PackedScene" uid="uid://1keulbjjf23t" path="res://Scene/parallax_fog_layer_background.tscn" id="3_wjmqx"]
+[ext_resource type="PackedScene" uid="uid://dio6fuw3pr3x8" path="res://Scene/start.tscn" id="4_vba5k"]
+[ext_resource type="PackedScene" uid="uid://cu7o2vgusw12e" path="res://Scene/player.tscn" id="5_kt10v"]
+
+[node name="Node" type="Node"]
+
+[node name="MainGameBackground" parent="." instance=ExtResource("1_pjtxo")]
+
+[node name="TileMap" parent="." instance=ExtResource("2_fo682")]
+layer_0/tile_data = PackedInt32Array(1114108, 1, 6, 1179644, 1, 7, 1114109, 65537, 6, 1179645, 65537, 7, 1114110, 131073, 6, 1179646, 131073, 7, 1114111, 196609, 6, 1179647, 196609, 7, 1048576, 262145, 6, 1114112, 262145, 7, 1048577, 327681, 6, 1114113, 327681, 7, 1048578, 393217, 6, 1114114, 393217, 7, 1048579, 458753, 6, 1114115, 458753, 7, 1048580, 524289, 6, 1114116, 524289, 7, 1048581, 589825, 6, 1114117, 589825, 7, 1048582, 655361, 6, 1114118, 655361, 7, 1048583, 720897, 6, 1114119, 720897, 7, 1048584, 786433, 6, 1114120, 786433, 7, 1048585, 851969, 6, 1114121, 851969, 7, 1048586, 917505, 6, 1114122, 917505, 7, 1048587, 983041, 6, 1114123, 983041, 7, 1048588, 1048577, 6, 1114124, 1048577, 7, 1048589, 1114113, 6, 1114125, 1114113, 7, 1048590, 1179649, 6, 1114126, 1179649, 7, 1048591, 1245185, 6, 1114127, 1245185, 7, 1048592, 1310721, 6, 1114128, 1310721, 7, 1048593, 1376257, 6, 1114129, 1376257, 7, 1048594, 1441793, 6, 1114130, 1441793, 7, 1048595, 1507329, 6, 1114131, 1507329, 7, 1048596, 1572865, 6, 1114132, 1572865, 7, 1048597, 1638401, 6, 1114133, 1638401, 7, 1048598, 1703937, 6, 1114134, 1703937, 7, 1048599, 1769473, 6, 1114135, 1769473, 7, 1048600, 1835009, 6, 1114136, 1835009, 7, 1048601, 1900545, 6, 1114137, 1900545, 7, 1048602, 1966081, 6, 1114138, 1966081, 7, 1048603, 2031617, 6, 1114139, 2031617, 7, 1048604, 2097153, 6, 1114140, 2097153, 7, 1048605, 2162689, 6, 1114141, 2162689, 7, 1048606, 2228225, 6, 1114142, 2228225, 7, 1048607, 2293761, 6, 1114143, 2293761, 7)
+
+[node name="ParallaxFogLayerBackground" parent="." instance=ExtResource("3_wjmqx")]
+offset = Vector2(2.08165e-12, 220)
+transform = Transform2D(1, 0, 0, 1, 2.08165e-12, 220)
+
+[node name="Start" parent="." instance=ExtResource("4_vba5k")]
+position = Vector2(47, 226)
+
+[node name="Player" parent="." instance=ExtResource("5_kt10v")]
+position = Vector2(47, 216)

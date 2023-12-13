@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 @export var speed = 120
+@export var health = 50
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var player = get_tree().get_nodes_in_group("Player")
 @onready var attack_cooldown_timer = $AttackCooldown 
 
-var health = 0
 var can_attack : bool = true
 
 

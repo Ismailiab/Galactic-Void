@@ -15,6 +15,7 @@ func _ready():
 
 func _on_okay_button_pressed():
 	if validate_user_input():
+		print (user_name)
 		GlobalScript._on_main_menu_new_game_okay_button_pressed(user_name)
 	else:
 		input_label.text = "*Invalid name entry! \n Only letters allowed \n Please enter your name:"

@@ -23,7 +23,7 @@ var direction : Vector2 = Vector2.ZERO
 var was_in_air : bool = false
 var is_attacking : bool = false
 var is_on_ground : bool = true
-
+var active : bool = true
 
 #Ensure this function remains in player.gd
 func _ready():
@@ -54,28 +54,29 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Attack1") && ! is_attacking:
 		attack_1()
 	
-	#Handle Jumps
-	if Input.is_action_just_pressed("jump"):
-		#Check for coyote timer
-		if is_on_ground || coyote_timer.time_left > 0:
-			#Normal jump from ground
-			jump()
-		elif ! has_double_jumped:
-			#Double jump in air
-			double_jump()
-	
-	#Call animation handler for falling animation
-	if velocity.y > 0 && !is_on_ground:
-		animation_handler.jump_end_animation()
-	
-	#Get the input direction from mapped inputs
-	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
-	if direction:
-		velocity.x = direction.x * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-	
+	if active == true:
+		#Handle Jumps
+		if Input.is_action_just_pressed("jump"):
+			#Check for coyote timer
+			if is_on_ground || coyote_timer.time_left > 0:
+				#Normal jump from ground
+				jump()
+			elif ! has_double_jumped:
+				#Double jump in air
+				double_jump()
+		
+		#Call animation handler for falling animation
+		if velocity.y > 0 && !is_on_ground:
+			animation_handler.jump_end_animation()
+		
+		#Get the input direction from mapped inputs
+		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		
+		if direction:
+			velocity.x = direction.x * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
+		
 	#Variable for coyote timer purposes
 	var was_on_floor = is_on_floor()
 	
@@ -129,14 +130,15 @@ func player_take_damage(damage):
 		emit_signal("took_damage", damage)
 		animation_handler.take_damage_animation()
 	elif hud.health <= 0:
+		
 		player_die()
 
 func player_die():
 	animation_handler.death_animation()
+	#active = false
 	await get_tree().create_timer(2.0).emit_signal("player_died")
 	var lost_life = hud.lives - 1
 	hud.lives = lost_life
-	
 
 
 func _on_hit_box_body_entered(body):

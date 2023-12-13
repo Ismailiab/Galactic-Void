@@ -206,7 +206,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_egofd")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
 "speed": 12.0
 }, {
@@ -250,7 +250,7 @@ script = ExtResource("1_aco8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_63q2b")
-animation = &"load_in"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 37.5)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0f0toiywral7"]
+[gd_scene load_steps=13 format=3 uid="uid://b0f0toiywral7"]
 
 [ext_resource type="Texture2D" uid="uid://pte3o5fasxrg" path="res://Art/Levels/Animated Objects/Glowing Orb/Orb GLowing thing.png" id="1_arftv"]
-[ext_resource type="Script" path="res://Script/animated_objects.gd" id="1_ynd6v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3lrjl"]
 atlas = ExtResource("1_arftv")
@@ -81,10 +80,9 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="GlowingOrb" type="Node2D" groups=["AnimatedObjects"]]
-script = ExtResource("1_ynd6v")
+[node name="GlowingOrb" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["AnimatedObjects"]]
 position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_ybm1d")
 animation = &"idle"
